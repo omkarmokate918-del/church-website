@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salvation Church</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --red: #b90045;
+    --dark: #171717;
+    --light: #f7f5f6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    background: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* NAVIGATION */
+
+header {
+    height: 75px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    color: white;
+}
+
+nav {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.nav-links a:hover {
+    color: #ffb5d0;
+}
+
+.donate {
+    background: var(--red);
+    padding: 12px 22px;
+    border-radius: 25px;
+    color: white;
+}
+
+/* HERO */
+
+.hero {
+    height: 600px;
+    min-height: 550px;
+    background:
+        linear-gradient(rgba(5,5,15,.65), rgba(5,5,15,.75)),
+        url("https://images.unsplash.com/photo-1507692049790-de58290a4334?w=1800")
+        center/cover no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 30px;
+}
+
+.small-title {
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 58px);
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #8c0035;
+    transform: translateY(-3px);
+}
+
+/* MISSION CARDS */
+
+.mission-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: -1px;
+}
+
+.mission-card {
+    padding: 45px 20px;
+    text-align: left;
+    background: white;
+}
+
+.mission-card h3 {
+    margin: 15px 0;
+    font-size: 17px;
+}
+
+.mission-card p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.mission-icon {
+    font-size: 35px;
+}
+
+/* INTRODUCTION */
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 70px 0;
+}
+
+.intro img {
+    height: 370px;
+}
+
+.intro-content h5 {
+    color: var(--red);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.intro-content h2 {
+    font-size: 35px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    color: #777;
+    line-height: 1.9;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+/* MISSION STATISTICS */
+
+.stats {
+    background: var(--red);
+    color: white;
+    padding: 55px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+.stats-intro h3 {
+    font-size: 23px;
+    line-height: 1.5;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* SECTION TITLE */
+
+.section-title {
+    text-align: center;
+    padding: 75px 0 35px;
+}
+
+.section-title span {
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+/* SERMONS */
+
+.sermons {
+    padding-bottom: 80px;
+}
+
+.sermon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.sermon img {
+    height: 220px;
+}
+
+.sermon-content {
+    padding: 20px;
+    background: #fafafa;
+}
+
+.sermon-content h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.sermon-content p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.7;
+}
+
+.sermon-content small {
+    display: block;
+    color: var(--red);
+    margin-bottom: 12px;
+}
+
+/* SERMON DETAIL */
+
+.sermon-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 400px;
+    background: #f6f2f3;
+}
+
+.sermon-detail img {
+    height: 100%;
+    min-height: 400px;
+}
+
+.sermon-info {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sermon-info h2 {
+    font-size: 31px;
+    line-height: 1.3;
+    margin: 15px 0;
+}
+
+.sermon-info p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.sermon-info span {
+    color: var(--red);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+    background: var(--red);
+    color: white;
+    padding: 75px 0;
+    text-align: center;
+}
+
+.testimonials h5 {
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+.testimonials h2 {
+    font-size: 34px;
+    margin: 15px 0 40px;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonial {
+    background: white;
+    color: #333;
+    padding: 30px 25px;
+    border-radius: 5px;
+    text-align: left;
+    position: relative;
+}
+
+.quote {
+    color: var(--red);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.testimonial p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 12px 0 20px;
+}
+
+.testimonial h4 {
+    font-size: 14px;
+}
+
+.dots {
+    margin-top: 30px;
+    letter-spacing: 8px;
+}
+
+/* EVENTS */
+
+.events {
+    padding-bottom: 80px;
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f6eaf0;
+    margin-bottom: 20px;
+}
+
+.event img {
+    height: 260px;
+}
+
+.event-info {
+    padding: 35px;
+    align-self: center;
+}
+
+.event-info h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.event-info p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.event-info small {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* LATEST NEWS */
+
+.news {
+    padding-bottom: 80px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.news img {
+    height: 210px;
+}
+
+.news-content {
+    padding: 20px 0;
+}
+
+.news-content small {
+    color: var(--red);
+}
+
+.news-content h3 {
+    font-size: 18px;
+    margin: 12px 0;
+}
+
+.news-content p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    background: #171717;
+    color: white;
+    padding: 65px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 35px;
+}
+
+.footer-column h3 {
+    font-size: 13px;
+    margin-bottom: 22px;
+    letter-spacing: 1px;
+}
+
+.footer-column p,
+.footer-column a {
+    font-size: 12px;
+    line-height: 2.2;
+    color: #aaa;
+    display: block;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.social {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.social span {
+    background: var(--red);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    text-align: center;
+    margin-top: 45px;
+    padding-top: 25px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .nav-links {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .mission-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-intro {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    header {
+        height: auto;
+        background: #171717;
+        position: relative;
+    }
+
+    nav {
+        height: auto;
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        height: 480px;
+        min-height: 0;
+    }
+
+    .intro,
+    .sermon-detail,
+    .event {
+        grid-template-columns: 1fr;
+    }
+
+    .intro {
+        gap: 25px;
+    }
+
+    .intro-content h2 {
+        font-size: 28px;
+    }
+
+    .sermon-grid,
+    .testimonial-grid,
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sermon-info {
+        padding: 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .mission-cards {
+        gap: 5px;
+    }
+
+    .mission-card {
+        padding: 25px 10px;
+    }
+
+    .event img {
+        height: 220px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+<div class="container">
+<nav>
+    <div class="logo">Salvation</div>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#mission">Ministries</a>
+        <a href="#sermons">Sermons</a>
+        <a href="#events">Events</a>
+        <a href="#news">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#donate" class="donate">Donate</a>
+    </div>
+</nav>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-content">
+    <div class="small-title">TRANSFORMING LIVES</div>
+
+    <h1>TOTAL SURRENDER TO GOD</h1>
+
+    <p>
+        Far away, behind the word mountains, from the countries
+        Vokalia and Consonantia, there live the blind texts.
+        Separated they live in.
+    </p>
+
+    <a href="#contact" class="btn">BECOME A VOLUNTEER</a>
+</div>
+</section>
+
+<!-- MISSION CARDS -->
+<section class="container mission-cards" id="mission">
+
+    <div class="mission-card">
+        <div class="mission-icon">♧</div>
+        <h3>WORSHIP</h3>
+        <p>For far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+    </div>
+
+    <div class="mission-card">
+        <div class="mission-icon">♙</div>
+        <h3>CONNECT</h3>
+        <p>For far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+    </div>
+
+    <div class="mission-card">
+        <div class="mission-icon">♡</div>
+        <h3>GOD'S LOVE</h3>
+        <p>For far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+    </div>
+
+    <div class="mission-card" style="background:#b90045;color:white">
+        <h3>A Christian Should Live For The Glory of God And Well-Being Of Others.</h3>
+        <p style="color:#f5dce6">
+        For far away, behind the word mountains, from the countries Vokalia and Consonantia.
+        </p>
+    </div>
+
+</section>
+
+<!-- INTRO -->
+<section class="container intro" id="about">
+
+    <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=1000" alt="Church interior">
+
+    <div class="intro-content">
+        <h5>WELCOME TO SALVATION CHURCH</h5>
+
+        <h2>CONNECT, GROW AND SERVE WITH US</h2>
+
+        <p>
+            We believe that faith brings people together.
+            Our mission is to spread love, hope and kindness
+            throughout our community.
+        </p>
+
+        <p>
+            Join us in worship, connect with people and
+            discover a meaningful journey of faith.
+        </p>
+
+        <a href="#contact" class="btn">READ MORE</a>
+    </div>
+
+</section>
+
+<!-- STATISTICS -->
+<section class="stats">
+<div class="container stats-grid">
+
+    <div class="stats-intro">
+        <h3>WE'RE ON A MISSION TO HELP ALL YOUR PROBLEMS</h3>
+    </div>
+
+    <div class="stat">
+        <h2>1,005,000</h2>
+        <p>MEMBERS</p>
+    </div>
+
+    <div class="stat">
+        <h2>65,000</h2>
+        <p>PASTORS</p>
+    </div>
+
+    <div class="stat">
+        <h2>500,000</h2>
+        <p>DONATIONS</p>
+    </div>
+
+    <div class="stat">
+        <h2>50</h2>
+        <p>CHURCHES</p>
+    </div>
+
+</div>
+</section>
+
+<!-- SERMONS -->
+<section class="container sermons" id="sermons">
+
+    <div class="section-title">
+        <span>OUR SERMONS</span>
+        <h2>WATCH AND LISTEN TO OUR<br>SERMONS</h2>
+    </div>
+
+    <div class="sermon-grid">
+
+        <div class="sermon">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?w=800" alt="Sermon">
+            <div class="sermon-content">
+                <small>JUNE 12, 2026</small>
+                <h3>God's Love and Faith</h3>
+                <p>Listen and learn about the power of faith and God's love in our lives.</p>
+            </div>
+        </div>
+
+        <div class="sermon">
+            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800" alt="Sermon">
+            <div class="sermon-content">
+                <small>JUNE 18, 2026</small>
+                <h3>Walking With God</h3>
+                <p>Discover the importance of faith, hope and spiritual growth.</p>
+            </div>
+        </div>
+
+        <div class="sermon">
+            <img src="https://images.unsplash.com/photo-1490730141103-6cac27aaab94?w=800" alt="Sermon">
+            <div class="sermon-content">
+                <small>JUNE 25, 2026</small>
+                <h3>A New Beginning</h3>
+                <p>Find inspiration to start a new journey with faith and confidence.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERMON DETAIL -->
+<section class="sermon-detail">
+
+    <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=1000" alt="Church sermon">
+
+    <div class="sermon-info">
+        <span>OUR SERMON</span>
+
+        <h2>God Wants To Do A New Thing In Your Life</h2>
+
+        <p><b>Speaker:</b> Dr. Rolando Henderson</p>
+        <p><b>Categories:</b> God, Pray, Faith</p>
+        <p><b>On Sunday:</b> 13 June, 2026</p>
+
+        <p>
+            A small river named Duden flows by their place
+            and supplies it with the necessary regelialia.
+            Discover hope, faith and a new beginning.
+        </p>
+
+        <div>
+            <a href="#sermons" class="btn">WATCH SERMONS</a>
+            &nbsp;
+            <a href="#sermons" class="btn" style="background:white;color:#b90045;border:1px solid #b90045">
+                DOWNLOAD SERMONS
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+
+<div class="container">
+
+    <h5>TESTIMONY</h5>
+    <h2>TRANSFORM LIVES</h2>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+                Far away, behind the word mountains,
+                from the countries Vokalia and Consonantia,
+                there live the blind texts.
+            </p>
+            <h4>Mark Smith</h4>
+        </div>
+
+        <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+                Far away, behind the word mountains,
+                from the countries Vokalia and Consonantia,
+                there live the blind texts.
+            </p>
+            <h4>Kyle Meyer</h4>
+        </div>
+
+        <div class="testimonial">
+            <div class="quote">“</div>
+            <p>
+                Far away, behind the word mountains,
+                from the countries Vokalia and Consonantia,
+                there live the blind texts.
+            </p>
+            <h4>John Doe</h4>
+        </div>
+
+    </div>
+
+    <div class="dots">● ● ● ● ●</div>
+
+</div>
+</section>
+
+<!-- EVENTS -->
+<section class="container events" id="events">
+
+    <div class="section-title">
+        <span>OUR EVENTS</span>
+        <h2>UPCOMING CHURCH EVENTS</h2>
+    </div>
+
+    <div class="event">
+        <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=900" alt="Church gathering">
+
+        <div class="event-info">
+            <h3>Giving Hope to Our Spiritual Needs</h3>
+            <small>▣ Monday, 8:00 AM – Tuesday, 8:00 PM</small>
+            <small>♧ Salvation Church</small>
+            <small>⌖ 203 Fake St. Mountain View, San Francisco, California, USA</small>
+            <a href="#contact" class="btn">MORE DETAILS</a>
+        </div>
+    </div>
+
+    <div class="event">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900" alt="Community event">
+
+        <div class="event-info">
+            <h3>Community Prayer and Worship</h3>
+            <small>▣ Sunday, 9:00 AM</small>
+            <small>♧ Salvation Church</small>
+            <small>⌖ Mountain View, California, USA</small>
+            <a href="#contact" class="btn">MORE DETAILS</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- BLOG -->
+<section class="container news" id="news">
+
+    <div class="section-title">
+        <span>OUR BLOG</span>
+        <h2>LATEST NEWS FROM OUR BLOG</h2>
+    </div>
+
+    <div class="news-grid">
+
+        <div class="news">
+            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?w=800" alt="Church">
+            <div class="news-content">
+                <small>JUNE 20, 2026</small>
+                <h3>Even the All-Powerful Pointing Has No Control</h3>
+                <p>Discover stories, inspiration and updates from our church community.</p>
+            </div>
+        </div>
+
+        <div class="news">
+            <img src="https://images.unsplash.com/photo-1438032005730-c779502df39b?w=800" alt="Church">
+            <div class="news-content">
+                <small>JUNE 18, 2026</small>
+                <h3>Faith Makes Everything Possible</h3>
+                <p>Learn how faith and love can transform our everyday lives.</p>
+            </div>
+        </div>
+
+        <div class="news">
+            <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800" alt="Church">
+            <div class="news-content">
+                <small>JUNE 15, 2026</small>
+                <h3>Building a Better Community Together</h3>
+                <p>Join our community and help make a positive difference.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+<div class="container">
+
+    <div class="footer-grid">
+
+        <div class="footer-column">
+            <h3>SALVATION</h3>
+            <p>
+                A small river named Duden flows by their
+                place and supplies it with the necessary
+                regelialia. Discover faith, hope and love.
+            </p>
+
+            <div class="social">
+                <span>f</span>
+                <span>𝕏</span>
+                <span>◎</span>
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>LATEST NEWS</h3>
+            <p>Even the all-powerful Pointing has no control about</p>
+            <p>June 20, 2026</p>
+            <br>
+            <p>Faith and hope in everyday life</p>
+            <p>June 18, 2026</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>QUICK LINKS</h3>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#sermons">Sermons</a>
+            <a href="#events">Events</a>
+            <a href="#news">Blog</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>HAVE A QUESTION?</h3>
+            <p>⌖ 203 Fake St. Mountain View, San Francisco, California, USA</p>
+            <p>☎ +2 392 3929 210</p>
+            <p>✉ info@yoursite.com</p>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        Copyright © 2026 All rights reserved |
+        This template is made with ♥
+    </div>
+
+</div>
+</footer>
+
+</body>
+</html>
